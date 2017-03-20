@@ -1169,6 +1169,9 @@ body.template-page .post-title {
 .template-post .content,
 .template-page .content {
     overflow: hidden;
+    /* Add a little padding so share icons don't get chopped
+       when there's no prev/next post */
+    padding-bottom: 1.5rem;
 }
 
 /* Tweak the .post wrapper style */

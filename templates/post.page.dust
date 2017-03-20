@@ -21,7 +21,7 @@
                 <h1 class="post-title">{@title editable="true"/}</h1>
             </header>
 
-            <section class="post-content">
+            <section class="post-content clearfix">
                 {@content editable="true"/}
             </section>
 

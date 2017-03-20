@@ -31,7 +31,7 @@
                 </section>
             </header>
 
-            <section class="post-content">
+            <section class="post-content clearfix">
                 {@content editable="true"/}
             </section>
 

@@ -1,0 +1,18 @@
+<div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <form class="nav-search" autocomplete="off">
+        <input type="search" name="s" placeholder="Search">
+    </form>
+    <ul>
+        {@navigation}
+            <li class="nav-{slug} {@urlCompare url=link}nav-current{/urlCompare}">
+                <a href="{@url path=link/}">{label}</a>
+            </li>
+        {/navigation}
+    </ul>
+    <a class="subscribe-button icon-feed" href="{@url type="feed"/}">Subscribe</a>
+</div>
+<span class="nav-cover"></span>

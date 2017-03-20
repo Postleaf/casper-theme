@@ -1,0 +1,31 @@
+{>"default"/}
+
+{!-- This is a page template. A page outputs content just like any other post, and has all the same
+    attributes by default, but you can also customise it to behave differently if you prefer. !}
+
+{<body}
+    {! Everything inside the #post tags pulls data from the page !}
+    {#post}
+
+    <header class="main-header post-head {?image}" style="background-image: url({@url path=image/}){:else}no-cover{/image}">
+        <nav class="main-nav {?image}overlay{/image} clearfix">
+            {?Settings.logo}<a class="blog-logo" href="{@url/}"><img src="{@url path=Settings.logo/}" alt="{Settings.title}" /></a>{/Settings.logo}
+            <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
+        </nav>
+    </header>
+
+    <main class="content" role="main">
+        <article class="{@postClass post=./}">
+
+            <header class="post-header">
+                <h1 class="post-title">{@title editable="true"/}</h1>
+            </header>
+
+            <section class="post-content">
+                {@content editable="true"/}
+            </section>
+
+        </article>
+    </main>
+    {/post}
+{/body}

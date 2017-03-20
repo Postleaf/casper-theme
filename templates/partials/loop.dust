@@ -1,0 +1,31 @@
+{! Previous/next page links - only displayed on page 2+ !}
+<div class="extra-pagination inner">
+    {>"partials/pagination"/}
+</div>
+
+{! This is the post loop - each post will be output using this markup !}
+{#posts}
+<article class="{@postClass post=./}">
+    <header class="post-header">
+        <h2 class="post-title"><a href="{@url type="post" slug=slug/}">{title}</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>{@excerpt paragraphs="1"/} <a class="read-more" href="{@url type="post" slug=slug/}">&raquo;</a></p>
+    </section>
+    <footer class="post-meta">
+        {?author.avatar}<img class="author-thumb" src="{@url path=author.avatar/}" alt="{author.name}" nopin="nopin" />{/author.avatar}
+        <a href="{@url type="author" username=author.username/}">{author.name}</a>
+        {?tags}
+          on
+          {#tags}
+            {@gt key=$idx value=0}{@last}and{/last}{/gt}
+            <a href="{@url type="tag" slug=slug/}">{name}</a>{@sep}, {/sep}
+          {/tags}
+        {/tags}
+        <time class="post-date" datetime="{@date date=publishedAt format="YYYY-MM-DD"/}">{@date date=publishedAt format="DD MMMM YYYY"/}</time>
+    </footer>
+</article>
+{/posts}
+
+{! Previous/next page links - displayed on every page !}
+{>"partials/pagination"/}

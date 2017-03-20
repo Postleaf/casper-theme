@@ -1,0 +1,12 @@
+<nav class="pagination" role="navigation">
+    {?pagination.prevPage}
+        <a class="newer-posts" href="{pagination.prevPageUrl}">&larr; Newer Posts</a>
+    {/pagination.prevPage}
+    <span class="page-number">
+        Page {@formatNumber number=pagination.currentPage/}
+        of {@formatNumber number=pagination.totalPages/}
+    </span>
+    {?pagination.nextPage}
+        <a class="older-posts" href="{pagination.nextPageUrl}">Older Posts &rarr;</a>
+    {/pagination.nextPage}
+</nav>

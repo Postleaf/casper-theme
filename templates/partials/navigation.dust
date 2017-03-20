@@ -3,7 +3,7 @@
     <a href="#" class="nav-close">
         <span class="hidden">Close</span>
     </a>
-    <form class="nav-search" autocomplete="off">
+    <form class="nav-search" action="{@url type="search"/}" autocomplete="off">
         <input type="search" name="s" placeholder="Search">
     </form>
     <ul>

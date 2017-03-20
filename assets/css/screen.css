@@ -1702,7 +1702,7 @@ body.template-page .post-title {
 }
 
 /* On page2+ make all the headers smaller */
-.paged .main-header {
+body:not(.page-1) .main-header {
     max-height: 30vh;
 }
 

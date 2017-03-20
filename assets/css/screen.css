@@ -1213,7 +1213,7 @@ body.template-page .post-title {
     margin-right: 1.75rem;
 }
 
-.post-content figure.image.align-left {
+.post-content figure.image.align-right {
     width: 50%;
     float: right;
     margin-left: 1.75rem;

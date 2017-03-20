@@ -6,29 +6,29 @@
 
     {! Everything inside the #author tags pulls data from the author !}
     {#author}
-      <header class="main-header author-head {?Settings.cover}" style="background-image: url({@url path=Settings.cover/}){:else}no-cover{/Settings.cover}">
-          <nav class="main-nav overlay clearfix">
-              {?Settings.logo}<a class="blog-logo" href="{@url/}"><img src="{@url path=Settings.logo/}" alt="{Settings.title}" /></a>{/Settings.logo}
-              <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
-          </nav>
-      </header>
+        <header class="main-header author-head {?author.image}" style="background-image: url({@url path=author.image/}){:else}{?Settings.cover}" style="background-image: url({@url path=Settings.cover/}){:else}no-cover{/Settings.cover}{/author.image}">
+            <nav class="main-nav overlay clearfix">
+                {?Settings.logo}<a class="blog-logo" href="{@url/}"><img src="{@url path=Settings.logo/}" alt="{Settings.title}" /></a>{/Settings.logo}
+                <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
+            </nav>
+        </header>
 
-      <section class="author-profile inner">
-          {?image}
-          <figure class="author-image">
-              <div class="img" style="background-image: url({@url path=avatar/})"><span class="hidden">{name}'s Picture</span></div>
-          </figure>
-          {/image}
-          <h1 class="author-title">{name}</h1>
-          {?bio}
-              <h2 class="author-bio">{bio|markdownToHtml|s}</h2>
-          {/bio}
-          <div class="author-meta">
-              {?location}<span class="author-location icon-location">{location}</span>{/location}
-              {?website}<span class="author-link icon-link"><a href="{website}">{website}</a></span>{/website}
-              <span class="author-stats"><i class="icon-stats"></i> {@plural count=pagination.totalPages none="No posts" one="1 post" many="% posts"/}</span>
-          </div>
-      </section>
+        <section class="author-profile inner">
+            {?image}
+            <figure class="author-image">
+                <div class="img" style="background-image: url({@url path=avatar/})"><span class="hidden">{name}'s Picture</span></div>
+            </figure>
+            {/image}
+            <h1 class="author-title">{name}</h1>
+            {?bio}
+            <h2 class="author-bio">{bio|markdownToHtml|s}</h2>
+            {/bio}
+            <div class="author-meta">
+                {?location}<span class="author-location icon-location">{location}</span>{/location}
+                {?website}<span class="author-link icon-link"><a href="{website}">{website}</a></span>{/website}
+                <span class="author-stats"><i class="icon-stats"></i> {@plural count=pagination.totalPages none="No posts" one="1 post" many="% posts"/}</span>
+            </div>
+        </section>
     {/author}
 
     {! The main content area on the homepage !}

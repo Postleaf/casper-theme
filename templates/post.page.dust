@@ -14,7 +14,7 @@
         </nav>
     </header>
 
-    <main class="content" role="main">
+    <main class="content">
         <article class="{@postClass post=./}">
 
             <header class="post-header">

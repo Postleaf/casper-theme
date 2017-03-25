@@ -50,7 +50,7 @@
                     <h4><a href="{@url type="author" username=username/}">{name}</a></h4>
 
                     {?bio}
-                        <p>{bio|markdownToHtml|s}</p>
+                        {bio|markdownToHtml|s}
                     {:else}
                         <p>Read <a href="{@url type="author" username=username/}">more posts</a> by this author.</p>
                     {/bio}
@@ -86,18 +86,18 @@
     {! Links to Previous/Next posts !}
     <aside class="read-next">
         {@nextPost}
-        <a class="read-next-story {?image}" style="background-image: url({@url path=image/}){:else}no-cover{/image}" href="{@url type="post" slug=slug/}">
+        <a class="read-next-story {?image}" style="background-image: url('{@url path=image/}'){:else}no-cover{/image}" href="{@url type="post" slug=slug/}">
             <section class="post">
                 <h2>{title}</h2>
-                <p>{@excerpt/}&hellip;</p>
+                <p>{@excerpt tags="em,strong"/}</p>
             </section>
         </a>
         {/nextPost}
         {@nextPost previous="true"}
-        <a class="read-next-story prev {?image}" style="background-image: url({@url path=image/}){:else}no-cover{/image}" href="{@url type="post" slug=slug/}">
+        <a class="read-next-story prev {?image}" style="background-image: url('{@url path=image/}'){:else}no-cover{/image}" href="{@url type="post" slug=slug/}">
             <section class="post">
                 <h2>{title}</h2>
-                <p>{@excerpt/}&hellip;</p>
+                <p>{@excerpt tags="em,strong"/}</p>
             </section>
         </a>
         {/nextPost}

@@ -16,7 +16,7 @@
     {! Brand icon !}
     {?Settings.favicon}
         <link rel="shortcut icon" href="{@dynamicImage src=Settings.favicon thumbnail="512"/}" />
-    {?Settings.favicon}
+    {/Settings.favicon}
 
     {! Styles'n'Scripts !}
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic%7COpen+Sans:700,400" />

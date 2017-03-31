@@ -16,7 +16,7 @@
         <section class="author-profile inner">
             {?image}
             <figure class="author-image">
-                <div class="img" style="background-image: url({@url path=avatar/})"><span class="hidden">{name}'s Picture</span></div>
+                <div class="img" style="background-image: url({@dynamicImage src=avatar thumbnail="256"/})"><span class="hidden">{name}'s Picture</span></div>
             </figure>
             {/image}
             <h1 class="author-title">{name}</h1>

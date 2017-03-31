@@ -14,12 +14,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     {! Brand icon !}
-    <link rel="shortcut icon" href="{@url type="theme" path="assets/favicon.ico"/}" />
+    {?Settings.favicon}
+        <link rel="shortcut icon" href="{@dynamicImage src=Settings.favicon thumbnail="512"/}" />
+    {?Settings.favicon}
 
     {! Styles'n'Scripts !}
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic%7COpen+Sans:700,400" />
     <link rel="stylesheet" type="text/css" href="{@url type="theme" path="assets/css/screen.css"/}" />
-
 
     {! Postleaf outputs important style and meta data with this tag !}
     {@head/}

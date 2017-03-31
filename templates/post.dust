@@ -85,19 +85,19 @@
 
     {! Links to Previous/Next posts !}
     <aside class="read-next">
-        {@nextPost}
+        {@nextPost post=.}
         <a class="read-next-story {?image}" style="background-image: url('{@url path=image/}'){:else}no-cover{/image}" href="{@url type="post" slug=slug/}">
             <section class="post">
                 <h2>{title}</h2>
-                <p>{@excerpt tags="em,strong"/}</p>
+                <p>{@excerpt content=content tags="em,strong"/}</p>
             </section>
         </a>
         {/nextPost}
-        {@nextPost previous="true"}
+        {@nextPost post=. previous="true"}
         <a class="read-next-story prev {?image}" style="background-image: url('{@url path=image/}'){:else}no-cover{/image}" href="{@url type="post" slug=slug/}">
             <section class="post">
                 <h2>{title}</h2>
-                <p>{@excerpt tags="em,strong"/}</p>
+                <p>{@excerpt content=content tags="em,strong"/}</p>
             </section>
         </a>
         {/nextPost}

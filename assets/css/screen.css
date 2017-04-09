@@ -1194,7 +1194,7 @@ body.template-page .post-title {
     display: block;
     max-width: 126%;
     height: auto;
-    padding: 0.6em 0;
+    margin: 0.6em 0;
     /* Centers an image by (1) pushing its left edge to the
        center of its container and (2) shifting the entire image
        in the opposite direction by half its own width.
@@ -1206,6 +1206,7 @@ body.template-page .post-title {
     transform: translateX(-50%);
 }
 
+/* Images in post content */
 .post-content figure.image {
     margin-bottom: 3.5rem;
 }
@@ -1238,6 +1239,25 @@ body.template-page .post-title {
     text-align: center;
     color: #AAA;
     font-family: "Open Sans", sans-serif;
+}
+
+/* Responsive video embeds */
+[data-embed-provider="Vimeo"],
+[data-embed-provider="YouTube"] {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+[data-embed-provider="Vimeo"] iframe,
+[data-embed-provider="YouTube"] iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .footnotes {

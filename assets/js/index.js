@@ -14,6 +14,10 @@
 
         $(".menu-button, .nav-cover, .nav-close").on("click", function(e){
             e.preventDefault();
+
+            // Don't open the nav if we're in the editor
+            if(window.Postleaf) return;
+
             $("body").toggleClass("nav-opened nav-closed");
         });
 

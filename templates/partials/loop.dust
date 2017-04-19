@@ -5,12 +5,12 @@
 
 {! This is the post loop - each post will be output using this markup !}
 {#posts}
-<article class="{@postClass post=./}">
+<article class="{@postClass/}">
     <header class="post-header">
         <h2 class="post-title"><a href="{@url type="post" slug=slug/}">{title}</a></h2>
     </header>
     <section class="post-excerpt">
-        <p>{@excerpt content=content tags="em,strong"/} <a class="read-more" href="{@url type="post" slug=slug/}">&raquo;</a></p>
+        <p>{@excerpt tags="em,strong"/} <a class="read-more" href="{@url type="post" slug=slug/}">&raquo;</a></p>
     </section>
     <footer class="post-meta">
         {?author.avatar}<img class="author-thumb" src="{@dynamicImage src=author.avatar thumbnail="64"/}" alt="{author.name}" nopin="nopin" />{/author.avatar}

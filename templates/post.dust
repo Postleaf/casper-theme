@@ -15,7 +15,7 @@
     </header>
 
     <main class="content" role="main">
-        <article class="{@postClass post=./}">
+        <article class="{@postClass/}">
 
             <header class="post-header">
                 <h1 class="post-title">{@title editable="true"/}</h1>
@@ -85,22 +85,26 @@
 
     {! Links to Previous/Next posts !}
     <aside class="read-next">
-        {@nextPost post=.}
-        <a class="read-next-story {?image}" style="background-image: url('{@url path=image/}'){:else}no-cover{/image}" href="{@url type="post" slug=slug/}">
-            <section class="post">
-                <h2>{title}</h2>
-                <p>{@excerpt content=content tags="em,strong"/}</p>
-            </section>
-        </a>
-        {/nextPost}
-        {@nextPost post=. previous="true"}
-        <a class="read-next-story prev {?image}" style="background-image: url('{@url path=image/}'){:else}no-cover{/image}" href="{@url type="post" slug=slug/}">
-            <section class="post">
-                <h2>{title}</h2>
-                <p>{@excerpt content=content tags="em,strong"/}</p>
-            </section>
-        </a>
-        {/nextPost}
+        {@getNextPost}
+            {#post}
+                <a class="read-next-story {?image}" style="background-image: url('{@url path=image/}'){:else}no-cover{/image}" href="{@url type="post" slug=slug/}">
+                    <section class="post">
+                        <h2>{title}</h2>
+                        <p>{@excerpt tags="em,strong"/}</p>
+                    </section>
+                </a>
+            {/post}
+        {/getNextPost}
+        {@getNextPost previous="true"}
+            {#post}
+                <a class="read-next-story prev {?image}" style="background-image: url('{@url path=image/}'){:else}no-cover{/image}" href="{@url type="post" slug=slug/}">
+                    <section class="post">
+                        <h2>{title}</h2>
+                        <p>{@excerpt tags="em,strong"/}</p>
+                    </section>
+                </a>
+            {/post}
+        {/getNextPost}
     </aside>
 
     {/post}

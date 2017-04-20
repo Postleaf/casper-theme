@@ -8,6 +8,6 @@
   "url": "https://github.com/TryGhost/Casper",
   "image": "assets/screenshot-desktop.jpg",
   "customPostTemplates": [
-    { "name": "Page", "filename": "post.page.dust" }
+    { "name": "Page", "filename": "post_page.dust" }
   ]
 }
